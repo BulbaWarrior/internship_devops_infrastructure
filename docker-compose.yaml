@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  backend:
+    depends_on:
+      - db
+    image: bulbawarrior/internship_backend
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db
+      FRONTEND_URL: http://frontend:80
+
+    
+  frontend:
+    depends_on:
+      - backend
+    image: bulbawarrior/internship_frontend
+    build:
+      context: ./internship_devops_frontend
+      args:
+        REACT_APP_BASE_URL: http://localhost:3000
+    
+  nginx:
+    depends_on:
+      - frontend
+    image: nginx
+    volumes:
+      - ./nginx_conf.d:/etc/nginx/conf.d
+    ports:
+      - 3000:80
