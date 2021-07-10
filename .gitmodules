@@ -1,6 +1,0 @@
-[submodule "internship_devops_frontend"]
-	path = internship_devops_frontend
-	url = git@github.com:BulbaWarrior/internship_devops_frontend.git
-[submodule "internship_devops_backend"]
-	path = internship_devops_backend
-	url = git@github.com:BulbaWarrior/internship_devops_backend.git
