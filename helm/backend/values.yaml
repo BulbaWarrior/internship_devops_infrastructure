@@ -13,7 +13,7 @@ frontend:
 
 database:
   secretName: db-postgresql
-  serviceName: db-postgresql
+  serviceName: database-postgresql
 
 service:
   type: ClusterIP
