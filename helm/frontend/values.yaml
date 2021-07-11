@@ -9,7 +9,7 @@ image:
   pullPolicy: IfNotPresent
 
 api:
-  hostname: myweather.com
+  hostname: vkalmykov.sak.ninja
 
 service:
   type: ClusterIP
@@ -21,7 +21,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: myweather.com
+    - host: vkalmykov.sak.ninja
       paths:
       - path: /
         backend:

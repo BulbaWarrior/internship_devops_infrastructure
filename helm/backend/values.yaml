@@ -9,7 +9,7 @@ image:
   pullPolicy: IfNotPresent
 
 frontend:
-  hostname: myweather.com
+  hostname: vkalmykov.sak.ninja
 
 database:
   secretName: db-postgresql
@@ -25,7 +25,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: myweather.com
+    - host: vkalmykov.sak.ninja
       paths:
       - path: /api
         backend:
