@@ -15,11 +15,12 @@ on:
 
 
 jobs:
-  env:
-    IMAGE: ${{ github.event.inputs.service_image_name }}
-    REGISTRY: ${{ github.event.inputs.registry_url }}
-    TAG: ${{ github.event.inputs.tag }}
   Update:
+    env:
+      IMAGE: ${{ github.event.inputs.service_image_name }}
+      REGISTRY: ${{ github.event.inputs.registry_url }}
+      TAG: ${{ github.event.inputs.tag }}
+      
     runs-on: ubuntu-latest
     name: Bump image tag
     
