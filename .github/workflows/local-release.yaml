@@ -31,7 +31,7 @@ jobs:
       - name: Update image tag in helm charts
         uses: jacobtomlinson/gha-find-replace@0.1.4
         with:
-          include: 'helm/*/values.yaml'
+          include: 'values.yaml'
           find: '  full: .*${{ env.IMAGE }}.*'
           replace: '  full: ${{ env.REGISTRY }}/${{ env.IMAGE }}:${{ env.TAG }}'
           
