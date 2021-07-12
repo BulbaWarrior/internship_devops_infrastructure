@@ -7,26 +7,17 @@ services:
   backend:
     depends_on:
       - db
-    image: bulbawarrior/internship_backend
+    image: bulbawarrior/internship_backend:v1.0.1
     environment:
       DATABASE_URL: postgresql://postgres:postgres@db
-      FRONTEND_URL: http://frontend:80
+      FRONTEND_URL: http://frontend:3000
 
     
   frontend:
     depends_on:
       - backend
-    image: bulbawarrior/internship_frontend
-    build:
-      context: ../internship_devops_frontend
-      args:
-        REACT_APP_BASE_URL: http://localhost:3000
-    
-  nginx:
-    depends_on:
-      - frontend
-    image: nginx
-    volumes:
-      - ./nginx_conf.d:/etc/nginx/conf.d
+    image: bulbawarrior/internship_frontend:1.0.0
+    environment:
+      REACT_APP_BASE_URL: http://backend:5000
     ports:
-      - 3000:80
+      - 3000:3000
