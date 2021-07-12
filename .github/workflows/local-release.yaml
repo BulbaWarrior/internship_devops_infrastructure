@@ -32,7 +32,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@0.1.4
         with:
           include: 'values.yaml'
-          find: '  full: .*${{ env.IMAGE }}.*'
+          find: '.*full:.*${{ env.IMAGE }}.*'
           replace: '  full: ${{ env.REGISTRY }}/${{ env.IMAGE }}:${{ env.TAG }}'
           
       - name: Push changes
