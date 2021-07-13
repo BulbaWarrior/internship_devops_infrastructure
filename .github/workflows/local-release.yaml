@@ -1,4 +1,4 @@
-name: local-release
+name: local release
 on: 
   workflow_dispatch:
     inputs:

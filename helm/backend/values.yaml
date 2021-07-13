@@ -5,11 +5,11 @@
 replicaCount: 2
 
 image:
-  full: bulbawarrior/internship_backend:v1.0.1
+  full: bulbawarrior/internship_backend:03eef8b02ec90cd93d7b0cce1866c28d2a59e04c
   pullPolicy: IfNotPresent
 
 frontend:
-  hostname: vkalmykov.sak.ninja
+  hostname: http://frontend:3000
 
 database:
   secretName: db-postgresql
@@ -20,7 +20,7 @@ service:
   port: 5000
 
 ingress:
-  enabled: true
+  enabled: false
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
