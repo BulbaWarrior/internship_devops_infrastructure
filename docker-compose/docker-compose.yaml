@@ -16,7 +16,7 @@ services:
   frontend:
     depends_on:
       - backend
-    image: bulbawarrior/internship_frontend:1.0.0
+    image: bulbawarrior/internship_frontend:0311752f427facce9326004facd29ed1e0807a35
     environment:
       REACT_APP_BASE_URL: http://backend:5000
     ports:
