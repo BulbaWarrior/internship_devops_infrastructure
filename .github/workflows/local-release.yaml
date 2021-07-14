@@ -35,6 +35,13 @@ jobs:
           find: '.*full:.*${{ env.IMAGE }}.*'
           replace: '  full: ${{ env.REGISTRY }}/${{ env.IMAGE }}:${{ env.TAG }}'
           
+      - name: Update image tag in docker-compose.yaml
+        uses: jacobtomlinson/gha-find-replace@0.1.4
+        with:
+          include: docker-compose.yaml
+          find: '    image:.*${{ env.IMAGE }}.*'
+          replace: '    image: ${{ env.REGISTRY }}/${{ env.IMAGE }}:${{ env.TAG }}'
+          
       - name: Push changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
