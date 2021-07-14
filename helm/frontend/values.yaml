@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  full: bulbawarrior/internship_frontend:0311752f427facce9326004facd29ed1e0807a35
+  full: bulbawarrior/internship_frontend:d2c79005d5781ba229c31cf823752554d9ea03dd
   pullPolicy: IfNotPresent
 
 api:
